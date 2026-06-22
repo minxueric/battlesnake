@@ -1,4 +1,4 @@
-run = "pip install -r requirements.txt && python main.py"
+run = "pip install -r requirements.txt && gunicorn server_wsgi:app -b 0.0.0.0:8000 --workers 2 --threads 2 --timeout 10"
 
 [nix]
 channel = "stable-24_05"
